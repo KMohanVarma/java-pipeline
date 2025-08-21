@@ -14,21 +14,21 @@ pipeline {
         }
         stage('Clean') {
             steps {
-                dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
+                dir("${env.WORKSPACE}"){
                     sh 'mvn clean'
                 }
             }
         }
         stage('Test') {
             steps {
-                dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
+                dir("${env.WORKSPACE}"){
                     sh 'mvn test'
                 }
             }
         }
         stage('Package') {
             steps {
-                dir("${env.WORKSPACE}/Ch05/05_04-challenge-create-artifacts-and-reports"){
+                dir("${env.WORKSPACE}"){
                     sh 'mvn package -DskipTests'
                 }
             }
